@@ -9,7 +9,7 @@ if(isset($_POST['decidemovie'])){
   $showtime = $_POST['show_time'];
   $fee = $_POST['tFee'];
   $payment = $_POST['payments'];
-
+  
 
   $User->addMovies($movies,$showtime,$fee,$payment);
 

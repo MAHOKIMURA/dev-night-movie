@@ -27,7 +27,7 @@
                     <input type="text" name="fname" id="" class="form-control mt-3" placeholder="Enter Firstname">
                     <input type="text" name="lname" id="" class="form-control mt-3" placeholder="enter lastname">
                     <input type="text" name="fullname" id="" class="form-control mt-3" placeholder="enter username">
-                    <input type="text" name="password" id="" class="form-control mt-3" placeholder="password">
+                    <input type="password" name="password" id="" class="form-control mt-3" placeholder="password">
                     <button type="submit" name="register" class="btn btn-outline-info btn-block mt-3">register</button>
                 </form>
             </div>

@@ -51,26 +51,20 @@ include 'nightmovieAction.php';
     <form action="nightmovieAction.php" method="post"> 
       <div class="container">
         <h4 class="text-danger" style="text-decoration: underline;">Select Movie</h4>
-        <?php
-        foreach($User->DisplayInfo() as $row):
-          
-          ?>
+        
         <ul class="list-inline">
           <li class="list-inline-item">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;
-    height: 150px;">
-              <label class="btn btn-secondary mb-1">
-                <a href="addreserve.php?movieID=<?php echo $_GET['movie_id']; ?>" class="text-light">Avengers
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;  height: 150px;">
+              
+              <a href="addreserve.php?movieID=<?php echo $_GET['movie_id']; ?>" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true">Avengers
                 
                 <!-- image -->
               </a> 
-              </label>
+            
             </div>
           </li>
         </ul>
-        <?php
-        endforeach;
-        ?>
+        
       </div>
     </form>
   </div>
