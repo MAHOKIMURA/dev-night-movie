@@ -22,7 +22,9 @@ include 'nightmovieAction.php';
 
 <body>
   <div class="jumbotron jumbotron-fluid bg-secondary">
-
+    <div class="container">
+     <h1 class="text-light text-center">CINEMA</h1> 
+    </div>
     <div class="float-right">
       <ul class="list-inline">
 
@@ -31,7 +33,7 @@ include 'nightmovieAction.php';
       </ul>
     </div>
   </div>
-  <div class="container">
+  <div class="container" style="background-image: url(./uploads/jukebox_main.jpg); background-size: cover; background-position: center;">
     <div class="container-fluid mt-3">
       <nav class="navbar navbar-light navbar-expand-lg navbar-togglerable-md">
         <div class="container">
@@ -70,7 +72,26 @@ include 'nightmovieAction.php';
     <br>
     <a href="movie_info.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Check Movie</a>
   </div>
-  <br>
+  <div class="container">
+    <div id="" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="./uploads/onward.webp" alt="onward" data-holder-rendered="true" style="width: 900px; height: 400px;">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 900px; height: 400px;">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
   <br>
   <br>
   <br>

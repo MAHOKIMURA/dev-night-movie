@@ -31,7 +31,7 @@
       <h3 class="display-4 text-monospace text-dark font-weight-bold text-center">Add New Movie Infomation</h3>
     </div>
     <div class="card-body">
-      <form action="nightmovieAction.php" method="post">
+      <form action="nightmovieAction.php" method="post" enctype="multipart/form-data">
         <input type="text" name="addmovie" id="" placeholder="New Movie" class="form-control">
         <br>
         <textarea name="movieinfo" id="" cols="60" rows="10" placeholder="Enter Infomation/Sammary" class="form-control"></textarea>

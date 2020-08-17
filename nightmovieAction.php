@@ -3,13 +3,7 @@
 include 'classes/User.php';
 $User = new User;
 
-if(isset($_POST['reserve'])){
-  $movie = $_POST['movieinfo'];
-
-  $User->SeeMovie($movie);
-  echo $User->CanSee();
-
-}elseif(isset($_POST['decidemovie'])){
+if(isset($_POST['decidemovie'])){
   
   $movies = $_POST['movie'];
   $showtime = $_POST['show_time'];

@@ -4,27 +4,7 @@ include 'Database.php';
 
 class User extends Database{
 
-  private $movie;
-  public function SeeMovie($movie){
-    $this->movie->$movie; 
-  }
-
-  public function CanSee(){
-    if($this->movie<=25){
-      echo "<div class='alter alter-danger'>";
-        echo "<p>Crouded</p>";
-      echo "</div>";
-    }elseif($this->movie == 50){
-      echo "<div class='alter alter-danger'>";
-        echo "<p>Full</p>";
-      echo "</div>";
-    }else{
-      echo "<div class='alter alter-danger'>";
-        echo "<p>Vacancy</p>";
-      echo "</div>";
-    }
-  }
-
+  
   public function registerUser($fname,$lname,$fullname,$password){
     $sql = "INSERT INTO login(username,password)VALUE('$fullname','$password')";
     $queryResult = $this->conn->query($sql);
@@ -52,7 +32,7 @@ class User extends Database{
 
     if($result->num_rows == 1){
         $row = $result->fetch_assoc();
-        $_SESSION['user'] = $row['user_id'];
+        $_SESSION['user_id'] = $row['user_id'];
         
 
         if($row['login_status'] == 'U'){
