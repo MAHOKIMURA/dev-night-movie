@@ -44,7 +44,7 @@
         <h3 class="display-4 text-monospace text-dark font-weight-bold text-center">Change New Movie Infomation</h3>
       </div>
       <div class="card-body">
-        <form action="nightmovieAction.php" method="post">
+        <form action="nightmovieAction.php" method="post" enctype="multipart/form-data">
           <input type="text" name="infoID" id="" value="<?php echo $_GET['infoID'] ?>" placeholder="" class="form-control">
           <br>
           <input type="text" name="addmovie" id="" placeholder="New Movie" class="form-control">

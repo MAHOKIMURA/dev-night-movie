@@ -1,6 +1,7 @@
 <?php
 
 include 'nightmovieAction.php';
+// $userID = $_SESSION['user_id'];
 
 ?>
 
@@ -18,7 +19,7 @@ include 'nightmovieAction.php';
 </head>
 
 <body>
-  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:lighten;">
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.7); background-blend-mode:lighten;">
   <div class="jumbotron jumbotron-fluid bg-secondary">
       <div class="container-fluid mt-3">
         <nav class="navbar navbar-dark navbar-expand-lg navbar-togglerable-md">
@@ -50,19 +51,18 @@ include 'nightmovieAction.php';
       <h3 class="display-4 font-weight-bold text-center">You are going to see</h3>
     </div>
     <?php
-    if ($User->Displayreservation() == FALSE) {
-      echo "<li class='list-group-item bg-dark'>NO MOVIES</li>";
+    if ($User->Displayreservation($_SESSION['user_id']) == FALSE) {
+      echo "<li class='list-group-item text-light bg-dark'>NO MOVIES</li>";
     } else {
-      foreach ($User->Displayreservation() as $row) {
+      foreach ($User->Displayreservation($_SESSION['user_id']) as $row) {
         $movieID = $row['movie_id'];
     ?>
         <div class="container mt-3">
 
           <ul class="list-group list-unstyled">
             <li class="list-group-item bg-dark text-white">No. <?php echo $movieID; ?></li>
-            <li class="list-group-item bg-light">Movie: <?php echo $row['moviename'] ?></li>
+            <li class="list-group-item bg-light">Movie: <?php echo $row['moviename'] ?></li> 
             <li class="list-group-item bg-light">Time: <?php echo $row['movietime']; ?></li>
-
             <li class="list-group-item bg-light">Ticket Fee: <?php echo $row['ticket']; ?></li>
             <li class="list-group-item bg-light">How to pay: <?php echo $row['paying']; ?></li>
             <li class="list-group-item bg-light text-center">

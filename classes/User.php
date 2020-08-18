@@ -59,12 +59,13 @@ class User extends Database{
     }
   }
 
-  public function Reservation($showtime,$fee,$payment,$movieID){
-    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying,movie_id) VALUES ('$showtime','$fee','$payment','$movieID')";
+  public function Reservation($showtime,$fee,$payment,$movieID,$sessionID){
+    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying, movie_id, user_id) VALUES ('$showtime','$fee','$payment','$movieID','$sessionID')";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){
-      header('location:reserveticket');
+      // $_SESSION['movie_id']= $movieID;
+      header('location:reserveticket.php');
     }else{
       echo "error reservation";
     }
@@ -82,8 +83,9 @@ class User extends Database{
   //   }
   // }
 
-  public function Displayreservation(){
-    $sql = "SELECT * FROM reserve_movie";
+  public function Displayreservation($userID){
+    // $sql = "SELECT * FROM users INNER JOIN reserve_movie ON users.user_id = reserve_movie.user_id WHERE reserve_movie.user_id = '$userID'";
+    $sql = "SELECT * FROM reserve_movie WHERE user_id = '$userID'";
     $result = $this->conn->query($sql);
 
     if($result->num_rows>0){
@@ -120,9 +122,11 @@ class User extends Database{
   }
   
   public function MovieInfo($addnewtitle,$detail,$type,$img){
-    $target_dir = 'uploads/';
+    $target_dir = 'uploads/'; 
+    $escape_title = $this->conn->real_escape_string($addnewtitle);
+    $escape_detail = $this->conn->real_escape_string($detail);
     $target_file = $target_dir.basename($img);
-    $sql = "INSERT INTO movie_info(add_title, add_detail, add_type, add_img) VALUE ('$addnewtitle','$detail','$type','$img')";
+    $sql = "INSERT INTO movie_info(add_title, add_detail, add_type, add_img) VALUE ('$escape_title','$escape_detail','$type','$img')";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){
@@ -161,10 +165,14 @@ class User extends Database{
   }
 
   public function changeInfo($addnewtitle,$detail,$type,$img,$infoID){
-    $sql = "UPDATE movie_info SET add_title='$addnewtitle',add_detail='$detail',add_type='$type',add_img='$img' WHERE info_id='$infoID'";
+    $target_dir = 'uploads/'; 
+    $escape_detail = $this->conn->real_escape_string($detail);
+    $target_file = $target_dir.basename($img);
+    $sql = "UPDATE movie_info SET add_title='$addnewtitle',add_detail='$escape_detail',add_type='$type',add_img='$img' WHERE info_id='$infoID'";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){
+      move_uploaded_file($_FILES['img']['tmp_name'],$target_file);
       header('location:movie_info.admin.php');
     }else{
       echo "error changing movie";

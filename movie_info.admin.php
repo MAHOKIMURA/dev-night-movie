@@ -72,26 +72,25 @@ include 'nightmovieAction.php';
             </div>
             <div class="row">
               <div class="col-md-6">
-                <!-- <img src="uploads/example.jpeg" alt=""> -->
-                <img class="rounded border border-warning" src="uploads/<?php echo $row['add_img']; ?>" alt="<?php echo $row['add_img']; ?>" height="100%" width="100%">
+                <img class="" src="uploads/<?php echo $row['add_img']; ?>" alt="<?php echo $row['add_img']; ?>" height="100%" width="100%">
               </div>
               <div class="col-md-6">
                 <span class="font-weight-bold">
-                  category:
-                  <p>
+                  Category:
+                  <p class="text-secondary">
                     <?php echo $row['add_type'] ?>
                   </p>
                 </span>
                 <span class="font-weight-bold">
-                  Summary:
-                  <p style="border: 4px solid lightgreen; border-radius: 10px;"><?php echo $row['add_detail'] ?></p>
+                  Storyline:
+                  <p class="text-secondary"><?php echo $row['add_detail'] ?></p>
                 </span>
               </div>
             </div>
             <div class="row">
               <div class="col text-right">
-                <a href="changenewmovie.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-warning  mr-3">Change Movie</a>
-                <a href="deletenewmovie.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-danger mr-3">Cancel Movie</a>
+                <a href="changenewmovie.php?infoID=<?php echo $infoID ?>" class="btn btn-outline-warning  mr-3">Change Movie</a>
+                <a href="deletenewmovie.php?infoID=<?php echo $infoID ?>" class="btn btn-outline-danger mr-3">Cancel Movie</a>
 
               </div>
             </div>

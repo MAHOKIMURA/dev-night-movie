@@ -30,7 +30,7 @@ include 'nightmovieAction.php';
             <button class="navbar-toggler " data-toggle="collapse" data-target="#basicNav">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <ul class="navbar-nav collapse navbar-collapse" id="basicNav">            
+            <ul class="navbar-nav collapse navbar-collapse" id="basicNav">
               <li class="nav-item">
                 <a href="theaterhp.php" class="nav-link">Back to HomePage</a>
               </li>
@@ -70,22 +70,18 @@ include 'nightmovieAction.php';
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <h3 class="font-weight-bold text-secondary display-4">
-                    <?php echo $row['add_title']; ?>
-                  </h3>
-                  <br>
-                  <img class="rounded border border-warning" src="./night_movie/uploads/<?php echo $row['add_img']; ?>" alt="<?php echo $row['add_img']; ?>" height="100%" width="100%">
+                  <img class="rounded border border-warning" src="uploads/<?php echo $row['add_img']; ?>" alt="<?php echo $row['add_img']; ?>" height="100%" width="100%">
                 </div>
                 <div class="col-md-6">
                   <span class="font-weight-bold">
-                    category:
-                    <p>
+                    Category:
+                    <p class="text-secondary">
                       <?php echo $row['add_type'] ?>
                     </p>
                   </span>
                   <span class="font-weight-bold">
-                    Summary:
-                    <p style="border: 4px solid lightgreen; border-radius: 10px;"><?php echo $row['add_detail'] ?></p>
+                    Storyline:
+                    <p class="text-secondary"><?php echo $row['add_detail'] ?></p>
                   </span>
                 </div>
               </div>

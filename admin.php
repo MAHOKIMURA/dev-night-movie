@@ -21,7 +21,7 @@ include 'nightmovieAction.php';
 </head>
 
 <body>
-  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:lighten;">
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 20%; background-position: center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:lighten;">
     <div class="jumbotron jumbotron-fluid bg-secondary">
       <div class="container">
         <h1 class="text-light text-center">CINEMA -Admin Page-</h1>
@@ -50,7 +50,7 @@ include 'nightmovieAction.php';
             </button>
             <ul class="navbar-nav collapse navbar-collapse" id="basicNav">
               <li class="nav-item">
-                <a href="addnewmovies.php" class="nav-link">Add New Movie Infomation</a>
+                <a href="addnewmovie.php" class="nav-link">Add New Movie Infomation</a>
               </li>
               <li class="nav-item">
                 <a href="movie_info.admin.php" class="nav-link" aria-pressed="true">Check Movie Infomation</a>

@@ -47,18 +47,22 @@
         <form action="nightmovieAction.php" method="post" enctype="multipart/form-data">
           <input type="text" name="addmovie" id="" placeholder="New Movie" class="form-control">
           <br>
-          <textarea name="movieinfo" id="" cols="60" rows="10" placeholder="Enter Infomation/Sammary" class="form-control"></textarea>
+          <textarea name="movieinfo" id="" cols="60" rows="10" placeholder="Enter Infomation/Storyline" class="form-control"></textarea>
           <br>
           <select name="type" id="" class="form-control">
             <option value="" disabled selected>Category</option>
             <option value="Comedy">Comedy</option>
             <option value="Human Drama">Human Drama</option>
+            <option value="Fantasy">Fantasy</option>
             <option value="Love Story">Love Story</option>
+            <option value="Family">Family</option>
+            <option value="Adventure">Adventure</option>
             <option value="Suspense&Mistery">Suspense&Mistery</option>
             <option value="Horror">Horror</option>
             <option value="Action">Action</option>
             <option value="SF">SF</option>
             <option value="Anime">Anime</option>
+            <option value="Other">Other</option>
           </select>
           <br>
           <label for="">Put Image</label>

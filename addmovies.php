@@ -1,6 +1,6 @@
 <?php
 include 'nightmovieAction.php';
-
+// $userID = $_SESSION['user_id'];
 
 ?>
 <!doctype html>
@@ -48,34 +48,26 @@ include 'nightmovieAction.php';
       <h2 class=" display-2 font-weight-bold text-md-center">Get Tickets</h2>
     </div>
     <div class="container mx-auto">
-      <form action="nightmovieAction.php" method="post">
-        <div class="container">
-          <h4 class="text-danger" style="text-decoration: underline;">Select Movie</h4>
+      <!-- <form action="nightmovieAction.php" method="post"> -->
+      <div class="container">
+        <h4 class="text-danger" style="text-decoration: underline;">Select Movie</h4>
 
-          <ul class="list-inline"> <?php foreach ($User->Displayreservation() as $row) : ?>
+        <ul class="list-inline"> <?php foreach ($User->Displayreservation($_SESSION['user_id']) as $row) : ?>
             <li class="list-inline-item">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;  height: 150px;">
-               
-                  <a href="addreserve.php?movie_id=<?php echo $row['movie_id']; ?>" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true">Avengers
-
-                    <!-- image -->
-                  </a>
-                
-              </div><?php endforeach; ?>
+              <a href="addreserve.php?movie_id=<?php echo $row['movie_id']; ?>" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 150px;  height: 150px;">Avengers
+                <!-- image -->
+              </a>
             </li>
-            <li class="list-inline-item">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;  height: 150px;">
-                  <a href="addreserve.php?movie_id=5" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true">Araddin</a>
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;  height: 150px;">
-                  <a href="addreserve.php" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true">Harry Potter</a>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </form>
+          <?php endforeach; ?>
+          <li class="list-inline-item">
+            <a href="addreserve.php?movie_id=5" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 150px;  height: 150px;">Araddin</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="addreserve.php" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 150px;  height: 150px;">Harry Potter</a>
+          </li>
+        </ul>
+      </div>
+      <!-- </form> -->
     </div>
     <footer class="p-5 mt-5 bg-secondary text-center">
       <p class="lead text-light">
