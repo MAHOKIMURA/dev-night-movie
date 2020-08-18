@@ -57,7 +57,7 @@ include 'nightmovieAction.php';
       foreach ($User->Displayreservation($_SESSION['user_id']) as $row) {
         $movieID = $row['movie_id'];
     ?>
-        <div class="container mt-3">
+        <div class="container w-50 mt-3">
 
           <ul class="list-group list-unstyled">
             <li class="list-group-item bg-dark text-white">No. <?php echo $movieID; ?></li>

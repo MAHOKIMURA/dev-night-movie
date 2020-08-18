@@ -69,8 +69,15 @@ include 'nightmovieAction.php';
                 </div>
               </div>
               <div class="row">
+                <div class="col">
+                  <h3 class="font-weight-bold text-secondary display-4">
+                    <?php echo $row['add_title']; ?>
+                  </h3>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-md-6">
-                  <img class="rounded border border-warning" src="uploads/<?php echo $row['add_img']; ?>" alt="<?php echo $row['add_img']; ?>" height="100%" width="100%">
+                  <img class="" src="uploads/<?php echo $row['add_img']; ?>" alt="<?php echo $row['add_img']; ?>" height="100%" width="100%">
                 </div>
                 <div class="col-md-6">
                   <span class="font-weight-bold">
@@ -81,7 +88,9 @@ include 'nightmovieAction.php';
                   </span>
                   <span class="font-weight-bold">
                     Storyline:
-                    <p class="text-secondary"><?php echo $row['add_detail'] ?></p>
+                    <p class="text-secondary">
+                      <?php echo $row['add_detail'] ?>
+                    </p>
                   </span>
                 </div>
               </div>

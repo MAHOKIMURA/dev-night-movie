@@ -21,7 +21,7 @@ include 'nightmovieAction.php';
 </head>
 
 <body>
-  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.7); background-blend-mode:lighten;">
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 20%; background-position: center; background-color:rgba(255, 255, 255, 0.7); background-blend-mode:lighten;">
     <div class="jumbotron jumbotron-fluid bg-secondary">
       <div class="container">
         <h1 class="text-light text-center">CINEMA</h1>
@@ -50,10 +50,10 @@ include 'nightmovieAction.php';
             </button>
             <ul class="navbar-nav collapse navbar-collapse" id="basicNav">
               <li class="nav-item">
-                <a href="addmovies.php" class="nav-link">Reserve movie</a>
+                <a href="addmovies.php" class="nav-link">Reserve Movie</a>
               </li>
               <li class="nav-item">
-                <a href="reserveticket.php" class="nav-link">Your ticket</a>
+                <a href="reserveticket.php" class="nav-link">Your Ticket</a>
               </li>
               <li class="nav-item">
                 <a href="movie_info.php" class="nav-link" aria-pressed="true">Check Movie</a>
@@ -91,7 +91,7 @@ include 'nightmovieAction.php';
           </div>
           <div class="carousel-item">
             <div class="container  d-flex justify-content-center ">
-              <img class="" src="./uploads/no_more.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
+              <img class="d-sm-none d-md-block" src="./uploads/no_more.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
               <img class="" src="./uploads/no_more2.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 600px; height: 400px;">
             </div>
           </div>

@@ -47,7 +47,7 @@ include 'nightmovieAction.php';
     <div class="container">
       <h2 class=" display-2 font-weight-bold text-md-center">Get Tickets</h2>
     </div>
-    <div class="container mx-auto">
+    <div class="container bg-light mx-auto">
       <!-- <form action="nightmovieAction.php" method="post"> -->
       <div class="container">
         <h4 class="text-danger" style="text-decoration: underline;">Select Movie</h4>
@@ -60,10 +60,13 @@ include 'nightmovieAction.php';
             </li>
           <?php endforeach; ?>
           <li class="list-inline-item">
-            <a href="addreserve.php?movie_id=5" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 150px;  height: 150px;">Araddin</a>
+            <a href="addreserve.php?movie_id=13" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 150px;  height: 150px;">Araddin</a>
           </li>
           <li class="list-inline-item">
-            <a href="addreserve.php" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 150px;  height: 150px;">Harry Potter</a>
+            <a href="addreserve.php?movie_id=16" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 150px;  height: 150px;">Araddin</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="addreserve.php?movie_id=15" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 150px;  height: 150px;">Harry Potter</a>
           </li>
         </ul>
       </div>
