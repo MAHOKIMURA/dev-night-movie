@@ -59,17 +59,28 @@ class User extends Database{
     }
   }
 
-  public function addMovies($movies,$showtime,$fee,$payment){
-    $sql = "INSERT INTO reserve_movie(moviename, movietime, ticket, paying) VALUES ('$movies','$showtime','$fee','$payment')";
+  public function Reservation($showtime,$fee,$payment,$movieID){
+    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying,movie_id) VALUES ('$showtime','$fee','$payment','$movieID')";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){
-      header('location:reserveticket.php');
-      
+      header('location:reserveticket');
     }else{
-      echo "error in adding movie";
+      echo "error reservation";
     }
   }
+
+  // public function addMovies($movies,$showtime,$fee,$payment){
+  //   $sql = "INSERT INTO reserve_movie(moviename, movietime, ticket, paying) VALUES ('$movies','$showtime','$fee','$payment')";
+  //   $result = $this->conn->query($sql);
+
+  //   if($result == TRUE){
+  //     header('location:reserveticket.php');
+      
+  //   }else{
+  //     echo "error in adding movie";
+  //   }
+  // }
 
   public function Displayreservation(){
     $sql = "SELECT * FROM reserve_movie";

@@ -12,57 +12,71 @@
 </head>
 
 <body>
-<div class="jumbotron jumbotron-fluid">
-    <div class="float-left">
-      <nav class="nav">
-        <a href="admin.php" class="nav-link">Back to AdminPage</a>
-        <a href="movie_info.admin.php" class="nav-link">Movie Infomation</a>
-      </nav>
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:lighten;">
+    <div class="jumbotron jumbotron-fluid bg-secondary">
+      <div class="container-fluid mt-3">
+        <nav class="navbar navbar-dark navbar-expand-lg navbar-togglerable-md">
+          <div class="container">
+            <a href="#" class="navbar-brand">
+              <!-- image here -->
+              <img src="image/exclamation_mark.jpg" height="30" width="30" alt="">
+            </a>
+            <button class="navbar-toggler " data-toggle="collapse" data-target="#basicNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav collapse navbar-collapse" id="basicNav">
+              <li class="nav-item">
+                <a href="admin.php" class="nav-link">Back to AdminPage</a>
+              </li>
+              <li class="nav-item">
+                <a href="movie_info.admin.php" class="nav-link">Go to Movie Infomation</a>
+              </li>
+              <li class="nav-item">
+                <a href="logout.php" class="nav-link">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
-    <div class="float-right">
-      <ul class="list-inline">
-        <li class="list-inline-item"><a href="userform.php">Sign In</a></li>
-        <li class="list-inline-item"><a href="logout.php">Logout</a></li>
-      </ul>
+    <div class="card w-75 mx-auto">
+      <div class="card-header bg-info">
+        <h3 class="display-4 text-monospace text-dark font-weight-bold text-center">Add New Movie Infomation</h3>
+      </div>
+      <div class="card-body">
+        <form action="nightmovieAction.php" method="post" enctype="multipart/form-data">
+          <input type="text" name="addmovie" id="" placeholder="New Movie" class="form-control">
+          <br>
+          <textarea name="movieinfo" id="" cols="60" rows="10" placeholder="Enter Infomation/Sammary" class="form-control"></textarea>
+          <br>
+          <select name="type" id="" class="form-control">
+            <option value="" disabled selected>Category</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Human Drama">Human Drama</option>
+            <option value="Love Story">Love Story</option>
+            <option value="Suspense&Mistery">Suspense&Mistery</option>
+            <option value="Horror">Horror</option>
+            <option value="Action">Action</option>
+            <option value="SF">SF</option>
+            <option value="Anime">Anime</option>
+          </select>
+          <br>
+          <label for="">Put Image</label>
+          <br>
+          <input type="file" name="img" id="">
+          <br>
+          <br>
+          <br>
+          <button type="submit" name="addnew" class="btn btn-outline-info btn-block">Add New Movie Infomation</button>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="card w-75 mx-auto">
-    <div class="card-header bg-info">
-      <h3 class="display-4 text-monospace text-dark font-weight-bold text-center">Add New Movie Infomation</h3>
-    </div>
-    <div class="card-body">
-      <form action="nightmovieAction.php" method="post" enctype="multipart/form-data">
-        <input type="text" name="addmovie" id="" placeholder="New Movie" class="form-control">
-        <br>
-        <textarea name="movieinfo" id="" cols="60" rows="10" placeholder="Enter Infomation/Sammary" class="form-control"></textarea>
-        <br>
-        <select name="type" id="" class="form-control">
-          <option value="" disabled selected>Category</option>
-          <option value="Comedy">Comedy</option>
-          <option value="Human Drama">Human Drama</option>
-          <option value="Love Story">Love Story</option>
-          <option value="Suspense&Mistery">Suspense&Mistery</option>
-          <option value="Horror">Horror</option>
-          <option value="Action">Action</option>
-          <option value="SF">SF</option>
-          <option value="Anime">Anime</option>
-        </select>
-        <br>
-        <label for="">Put Image</label>
-        <br>
-        <input type="file" name="img" id="">
-        <br>
-        <br>
-        <br>
-        <button type="submit" name="addnew" class="btn btn-outline-info btn-block">Add New Movie Infomation</button>
-      </form>
-    </div>
-  </div>
-  <footer class="p-5 mt-5 bg-secondary text-center">
+    <footer class="p-5 mt-5 bg-secondary text-center">
       <p class="lead text-light">
         &copy;2020 All Rights Reserved
       </p>
-  </footer>
+    </footer>
+  </div>
 
 
 

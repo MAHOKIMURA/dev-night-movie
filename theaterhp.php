@@ -21,7 +21,7 @@ include 'nightmovieAction.php';
 </head>
 
 <body>
-  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:lighten;">
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.7); background-blend-mode:lighten;">
     <div class="jumbotron jumbotron-fluid bg-secondary">
       <div class="container">
         <h1 class="text-light text-center">CINEMA</h1>
@@ -40,11 +40,10 @@ include 'nightmovieAction.php';
     </div>
     <div class="container">
       <div class="container-fluid mt-3">
-        <nav class="navbar navbar-light navbar-expand-lg navbar-togglerable-md">
+        <nav class="navbar navbar-light navbar-expand-lg navbar-togglerable-md" style="background-color: #BDB76B;">
           <div class="container">
             <a href="#" class="navbar-brand">
-              <!-- image here -->
-              <img src="image/exclamation_mark.jpg" height="30" width="30" alt="">
+              <img src="./uploads/nav_icon.png" height="50" width="50" alt="nav_icon">
             </a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#basicNav">
               <span class="navbar-toggler-icon"></span>
@@ -55,6 +54,9 @@ include 'nightmovieAction.php';
               </li>
               <li class="nav-item">
                 <a href="reserveticket.php" class="nav-link">Your ticket</a>
+              </li>
+              <li class="nav-item">
+                <a href="movie_info.php" class="nav-link" aria-pressed="true">Check Movie</a>
               </li>
               <div class="dropdown">
                 <li class="nav-item">
@@ -74,17 +76,13 @@ include 'nightmovieAction.php';
       </div>
     </div>
     <br>
-    <br>
-    <br>
-    <a href="movie_info.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Check Movie</a>
-
     <div class="container">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
         </ol>
-        <div class="carousel-inner bg-warning" role="listbox">
+        <div class="carousel-inner" role="listbox" style="background-color: rgba(0,0,0,0.5);">
           <div class="carousel-item active">
             <div class="container  d-flex justify-content-center ">
               <img class="" src="./uploads/onward.webp" data-src="holder.js/900x400?theme=social" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
@@ -92,10 +90,10 @@ include 'nightmovieAction.php';
             </div>
           </div>
           <div class="carousel-item">
-          <div class="container  d-flex justify-content-center ">
-            <img class="" src="./uploads/no_more.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
-            <img class="" src="./uploads/no_more2.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 600px; height: 400px;">
-          </div>
+            <div class="container  d-flex justify-content-center ">
+              <img class="" src="./uploads/no_more.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
+              <img class="" src="./uploads/no_more2.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 600px; height: 400px;">
+            </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -108,18 +106,24 @@ include 'nightmovieAction.php';
         </a>
       </div>
     </div>
-
-
     <br>
-    <div class="container">
-      <h3 class="font-weight-border">Coming Soon</h3>
-      <br>
-      <div class="container">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/gn5QmllRCn4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-        </iframe>
-        <br>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/yGY484EPe5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br>
+    <div class="container" >
+      <div class="row">
+        <div class="col">
+          <h3 class="display-4 font-weight-bolder">Coming Soon</h3>
+        </div>
       </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/gn5QmllRCn4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+        </div>
+        <div class="col-lg-6">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/yGY484EPe5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+
     </div>
     <br>
     <br>
@@ -138,12 +142,11 @@ include 'nightmovieAction.php';
     <br>
     <br>
     <br>
-  </div>
-  <footer class="p-5 mt-5 bg-secondary text-center">
-    <p class="lead text-light">
-      &copy;2020 All Rights Reserved
-    </p>
-  </footer>
+    <footer class="p-5 mt-5 bg-secondary text-center">
+      <p class="lead text-light">
+        &copy;2020 All Rights Reserved
+      </p>
+    </footer>
   </div>
 
   <!-- Optional JavaScript -->

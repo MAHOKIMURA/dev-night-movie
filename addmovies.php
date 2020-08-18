@@ -17,62 +17,72 @@ include 'nightmovieAction.php';
 </head>
 
 <body>
-  <div class="jumbotron jumbotron-fluid bg-secondary">
-    <div class="container-fluid mt-3">
-      <nav class="navbar navbar-dark navbar-expand-lg navbar-togglerable-md">
-        <div class="container">
-          <a href="#" class="navbar-brand">
-            <!-- image here -->
-            <img src="image/exclamation_mark.jpg" height="30" width="30" alt="">
-          </a>
-          <button class="navbar-toggler " data-toggle="collapse" data-target="#basicNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <ul class="navbar-nav collapse navbar-collapse" id="basicNav">
-            <li class="nav-item">
-              <a href="theaterhp.php" class="nav-link">Back to HomePage</a>
-            </li>
-            <li class="nav-item">
-              <a href="movie_info.php" class="nav-link">Check Movie Infomation</a>
-            </li>
-            <li class="nav-item">
-              <a href="logout.php" class="nav-link">Logout</a>
-            </li>
-          </ul> 
-        </div>
-      </nav>
-    </div>
-  </div>
-  <div class="container">
-    <h2 class=" display-2 font-weight-bold text-md-center">Get Tickets</h2>
-    <hr>
-  </div>
-  <div class="container mx-auto">
-    <form action="nightmovieAction.php" method="post"> 
-      <div class="container">
-        <h4 class="text-danger" style="text-decoration: underline;">Select Movie</h4>
-        
-        <ul class="list-inline">
-          <li class="list-inline-item">
-            <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;  height: 150px;">
-              
-              <a href="addreserve.php?movieID=<?php echo $_GET['movie_id']; ?>" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true">Avengers
-                
-                <!-- image -->
-              </a> 
-            
-            </div>
-          </li>
-        </ul>
-        
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.7); background-blend-mode:lighten;">
+    <div class="jumbotron jumbotron-fluid bg-secondary">
+      <div class="container-fluid mt-3">
+        <nav class="navbar navbar-dark navbar-expand-lg navbar-togglerable-md">
+          <div class="container">
+            <a href="#" class="navbar-brand">
+              <!-- image here -->
+              <img src="image/exclamation_mark.jpg" height="30" width="30" alt="">
+            </a>
+            <button class="navbar-toggler " data-toggle="collapse" data-target="#basicNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav collapse navbar-collapse" id="basicNav">
+              <li class="nav-item">
+                <a href="theaterhp.php" class="nav-link">Back to HomePage</a>
+              </li>
+              <li class="nav-item">
+                <a href="movie_info.php" class="nav-link">Check Movie Infomation</a>
+              </li>
+              <li class="nav-item">
+                <a href="logout.php" class="nav-link">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-    </form>
-  </div>
-  <footer class="p-5 mt-5 bg-secondary text-center">
+    </div>
+    <div class="container">
+      <h2 class=" display-2 font-weight-bold text-md-center">Get Tickets</h2>
+    </div>
+    <div class="container mx-auto">
+      <form action="nightmovieAction.php" method="post">
+        <div class="container">
+          <h4 class="text-danger" style="text-decoration: underline;">Select Movie</h4>
+
+          <ul class="list-inline"> <?php foreach ($User->Displayreservation() as $row) : ?>
+            <li class="list-inline-item">
+              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;  height: 150px;">
+               
+                  <a href="addreserve.php?movie_id=<?php echo $row['movie_id']; ?>" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true">Avengers
+
+                    <!-- image -->
+                  </a>
+                
+              </div><?php endforeach; ?>
+            </li>
+            <li class="list-inline-item">
+              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;  height: 150px;">
+                  <a href="addreserve.php?movie_id=5" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true">Araddin</a>
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;  height: 150px;">
+                  <a href="addreserve.php" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true">Harry Potter</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </form>
+    </div>
+    <footer class="p-5 mt-5 bg-secondary text-center">
       <p class="lead text-light">
         &copy;2020 All Rights Reserved
       </p>
-  </footer>
+    </footer>
+  </div>
 
 
 

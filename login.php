@@ -22,7 +22,9 @@
       <div class="card-body">
         <form action="nightmovieAction.php" method="post">
           <input type="text" name="fullname" id="" placeholder="What is your User Name" class="form-control">
+          <br>
           <input type="password" name="password" id="" placeholder="What is your Password" class="form-control">
+          <br>
           <br>
           <button type="submit" name="login" class="btn btn-outline-primary btn-block">Log In</button>
         </form>

@@ -18,41 +18,69 @@ include 'nightmovieAction.php';
 </head>
 
 <body>
-  <div class="jumbotron">
-    <a href="theaterhp.php">Go to Homepage</a>
-    <a class="mr-2" href="addmovies.php">Reserve Movie</a>
-    <a href=""></a>
-  </div>
-  <div class="container">
-
-    <h3>You are going to see</h3>
-  </div>
-  <?php
-  if ($User->Displayreservation() == FALSE) {
-    echo "<li class='list-group-item bg-dark'>NO MOVIES</li>";
-  } else {
-    foreach ($User->Displayreservation() as $row) {
-      $movieID = $row['movie_id'];
-  ?>
-      <div class="container mt-3">
-
-        <ul class="list-group list-unstyled">
-          <li class="list-group-item bg-dark text-white">No. <?php echo $movieID; ?></li>
-          <li class="list-group-item bg-light">Movie: <?php echo $row['moviename'] ?></li>
-          <li class="list-group-item bg-light">Time: <?php echo $row['movietime']; ?></li>
-
-          <li class="list-group-item bg-light">Ticket Fee: <?php echo $row['ticket']; ?></li>
-          <li class="list-group-item bg-light">How to pay: <?php echo $row['paying']; ?></li>
-          <li class="list-group-item bg-light text-center">
-            <a href="change.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-warning  mr-3">Change Your Movie</a>
-            <a href="deleteticket.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-danger mr-3">Cancel Your Movie</a>
-          </li>
-        </ul>
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:lighten;">
+  <div class="jumbotron jumbotron-fluid bg-secondary">
+      <div class="container-fluid mt-3">
+        <nav class="navbar navbar-dark navbar-expand-lg navbar-togglerable-md">
+          <div class="container">
+            <a href="#" class="navbar-brand">
+              <!-- image here -->
+              <img src="image/exclamation_mark.jpg" height="30" width="30" alt="">
+            </a>
+            <button class="navbar-toggler " data-toggle="collapse" data-target="#basicNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav collapse navbar-collapse" id="basicNav">            
+              <li class="nav-item">
+                <a href="theaterhp.php" class="nav-link">Back to HomePage</a>
+              </li>
+              <li class="nav-item">
+                <a href="movie_info.php" class="nav-link">Go to Movie Infomation</a>
+              </li>
+              <li class="nav-item">
+                <a href="logout.php" class="nav-link">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
-  <?php
+    </div>
+    <div class="container">
+
+      <h3 class="display-4 font-weight-bold text-center">You are going to see</h3>
+    </div>
+    <?php
+    if ($User->Displayreservation() == FALSE) {
+      echo "<li class='list-group-item bg-dark'>NO MOVIES</li>";
+    } else {
+      foreach ($User->Displayreservation() as $row) {
+        $movieID = $row['movie_id'];
+    ?>
+        <div class="container mt-3">
+
+          <ul class="list-group list-unstyled">
+            <li class="list-group-item bg-dark text-white">No. <?php echo $movieID; ?></li>
+            <li class="list-group-item bg-light">Movie: <?php echo $row['moviename'] ?></li>
+            <li class="list-group-item bg-light">Time: <?php echo $row['movietime']; ?></li>
+
+            <li class="list-group-item bg-light">Ticket Fee: <?php echo $row['ticket']; ?></li>
+            <li class="list-group-item bg-light">How to pay: <?php echo $row['paying']; ?></li>
+            <li class="list-group-item bg-light text-center">
+              <a href="change.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-warning  mr-3">Change Your Movie</a>
+              <a href="deleteticket.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-danger mr-3">Cancel Your Movie</a>
+            </li>
+          </ul>
+        </div>
+    <?php
+      }
     }
-  }
-  ?>
+    ?>
+    <footer class="p-5 mt-5 bg-secondary text-center">
+      <p class="lead text-light">
+        &copy;2020 All Rights Reserved
+      </p>
+    </footer>
+  </div>
 
 
 

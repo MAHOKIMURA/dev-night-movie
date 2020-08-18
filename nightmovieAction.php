@@ -5,13 +5,13 @@ $User = new User;
 
 if(isset($_POST['decidemovie'])){
   
-  $movies = $_POST['movie'];
+  $movieID =$_POST['movieID'];
   $showtime = $_POST['show_time'];
   $fee = $_POST['tFee'];
   $payment = $_POST['payments'];
   
 
-  $User->addMovies($movies,$showtime,$fee,$payment);
+  $User->Reservation($movieID,$showtime,$fee,$payment);
 
 }elseif(isset($_POST['changereserve'])){
   $movies = $_POST['movie'];
