@@ -21,55 +21,57 @@ include 'nightmovieAction.php';
 </head>
 
 <body>
-  <div class="jumbotron jumbotron-fluid bg-secondary">
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.6); background-blend-mode:lighten;">
+    <div class="jumbotron jumbotron-fluid bg-secondary">
+      <div class="container">
+        <h1 class="text-light text-center">CINEMA</h1>
+      </div>
+      <div class="float-right">
+        <ul class="list-inline">
+
+          <li class="list-inline-item">
+            <a href="userform.php" class="text-light">Sign In</a>
+          </li>
+          <li class="list-inline-item">
+            <a href="logout.php" class="text-light">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     <div class="container">
-      <h1 class="text-light text-center">CINEMA</h1>
-    </div>
-    <div class="float-right">
-      <ul class="list-inline">
-
-        <li class="list-inline-item">
-          <a href="userform.php" class="text-light">Sign In</a>
-        </li>
-        <li class="list-inline-item">
-          <a href="logout.php" class="text-light">Logout</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="container" style="background-image: url(./uploads/retro_cinema.jpg); background-size: auto; background-position: center;">
-    <div class="container-fluid mt-3">
-      <nav class="navbar navbar-light navbar-expand-lg navbar-togglerable-md">
-        <div class="container">
-          <a href="#" class="navbar-brand">
-            <!-- image here -->
-            <img src="image/exclamation_mark.jpg" height="30" width="30" alt="">
-          </a>
-          <button class="navbar-toggler" data-toggle="collapse" data-target="#basicNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <ul class="navbar-nav collapse navbar-collapse" id="basicNav">
-            <li class="nav-item">
-              <a href="addmovies.php" class="nav-link">Reserve movie</a>
-            </li>
-            <li class="nav-item">
-              <a href="reserveticket.php" class="nav-link">Your ticket</a>
-            </li>
-            <div class="dropdown">
+      <div class="container-fluid mt-3">
+        <nav class="navbar navbar-light navbar-expand-lg navbar-togglerable-md">
+          <div class="container">
+            <a href="#" class="navbar-brand">
+              <!-- image here -->
+              <img src="image/exclamation_mark.jpg" height="30" width="30" alt="">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#basicNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav collapse navbar-collapse" id="basicNav">
               <li class="nav-item">
-
-                <a href="#" class="btn dropdown-toggle nav-link" role="button" id="other-link" data-toggle="dropdown">
-                  Other
-                </a>
-                <div class="dropdown-menu" aria-labelledby="other-link">
-                  <a href="#" class="dropdown-item">About Us</a>
-                  <a href="#" class="dropdown-item">Events</a>
-                </div>
+                <a href="addmovies.php" class="nav-link">Reserve movie</a>
               </li>
-            </div>
-          </ul>
-        </div>
-      </nav>
+              <li class="nav-item">
+                <a href="reserveticket.php" class="nav-link">Your ticket</a>
+              </li>
+              <div class="dropdown">
+                <li class="nav-item">
+
+                  <a href="#" class="btn dropdown-toggle nav-link" role="button" id="other-link" data-toggle="dropdown">
+                    Other
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="other-link">
+                    <a href="#" class="dropdown-item">About Us</a>
+                    <a href="#" class="dropdown-item">Events</a>
+                  </div>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
     <br>
     <br>
@@ -77,34 +79,46 @@ include 'nightmovieAction.php';
     <a href="movie_info.php" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Check Movie</a>
 
     <div class="container">
-      <div id="" class="carousel slide w-lg-50 bg-dark" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner bg-warning" role="listbox">
           <div class="carousel-item active">
             <div class="container  d-flex justify-content-center ">
-              <img src="./uploads/onward.webp" alt="onward" data-holder-rendered="true" style="width: 300px; height: 400px;">
+              <img class="" src="./uploads/onward.webp" data-src="holder.js/900x400?theme=social" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
+              <img class="" src="./uploads/ww84.jpeg" data-src="holder.js/900x400?theme=social" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
             </div>
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100" src="" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 900px; height: 400px;">
+          <div class="container  d-flex justify-content-center ">
+            <img class="" src="./uploads/no_more.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
+            <img class="" src="./uploads/no_more2.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 600px; height: 400px;">
+          </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="carousel-control-next" href="#" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
         </a>
       </div>
     </div>
+
+
     <br>
     <div class="container">
       <h3 class="font-weight-border">Coming Soon</h3>
-      <hr>
+      <br>
       <div class="container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/gn5QmllRCn4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
         </iframe>
+        <br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/yGY484EPe5U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
     <br>
@@ -130,6 +144,7 @@ include 'nightmovieAction.php';
       &copy;2020 All Rights Reserved
     </p>
   </footer>
+  </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
