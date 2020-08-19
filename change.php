@@ -66,14 +66,6 @@
               </div>
             </li>
             <li class="list-inline-item">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;
-    height: 150px;">
-                <label class="btn btn-secondary mb-1">
-                  <input type="radio" name="movie" id="" autocomplete="off" checked="" value="Harry Potter"> Harry Potter and the Philosopher's Stone
-                </label>
-              </div>
-            </li>
-            <li class="list-inline-item">
               <div class="btn-group btn-group-toggle " data-toggle="buttons" style="width: 200px;
     height: 150px;">
                 <label class="btn btn-secondary mb-1 ">
@@ -85,7 +77,15 @@
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;
     height: 150px;">
                 <label class="btn btn-secondary mb-1">
-                  <input type="radio" name="movie" id="" autocomplete="off" checked="" value="千と千尋の神隠し"> 千と千尋の神隠し
+                  <input type="radio" name="movie" id="" autocomplete="off" checked="" value="Harry Potter"> Harry Potter and the Philosopher's Stone
+                </label>
+              </div>
+            </li>
+            <li class="list-inline-item">
+              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;
+    height: 150px;">
+                <label class="btn btn-secondary mb-1">
+                  <input type="radio" name="movie" id="" autocomplete="off" checked="" value="Kingsman"> Kingsman: The Secret Service
                 </label>
               </div>
             </li>

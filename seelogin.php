@@ -29,22 +29,22 @@ include 'nightmovieAction.php';
       <h3>You are going to see</h3>
     </div>
     <?php
-    if ($User->DisplayUsers() == FALSE) {
+    if ($User->DisplayUsers($_SESSION['user_id']) == FALSE) {
       echo "<li class='list-group-item bg-dark'>NO MOVIES</li>";
     } else {
-      foreach ($User->DisplayUsers() as $row) {
-        $userID = $row['user_id'];
+      foreach ($User->DisplayUsers($_SESSION['user_id']) as $row) {
+        // $userID = $row['user_id'];
     ?>
         <div class="container mt-3">
 
           <ul class="list-group list-unstyled">
-            <li class="list-group-item bg-dark text-white">No. <?php echo $userID; ?></li>
+            <!-- <li class="list-group-item bg-dark text-white">No. <?php //echo $userID; ?></li> -->
             <li class="list-group-item bg-light"> <?php echo $row['fname'] ?></li>
             <li class="list-group-item bg-light"> <?php echo $row['lname']; ?></li>
-            <li>
-              <a href="change.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-warning  mr-3">Change Your Movie</a>
-              <a href="deleteticket.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-danger mr-3">Cancel Your Movie</a>
-            </li>
+            <!-- <li>
+              <a href="change.php?movieID=<?php //echo $movieID ?>" class="btn btn-outline-warning  mr-3">Change Your Movie</a>
+              <a href="deleteticket.php?movieID=<?php //echo $movieID ?>" class="btn btn-outline-danger mr-3">Cancel Your Movie</a>
+            </li> -->
           </ul>
         </div>
     <?php

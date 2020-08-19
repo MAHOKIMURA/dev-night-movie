@@ -25,6 +25,20 @@ class User extends Database{
         return "error in first query";
     }
   }
+  public function displayMovies($sessionID){
+    $sql = "SELECT * FROM movie_info WHERE info_id = '$sessionID'";
+    $result = $this->conn->query($sql);
+
+    if($result->num_rows>0){
+      $row = array();
+      while($rows = $result->fetch_assoc()){
+        $row[] = $rows;
+      }
+        return $row;
+    }else{
+      return FALSE;
+    }
+  }
 
   public function login($username,$password){
     $sql = "SELECT * FROM login INNER JOIN users ON login.login_id = users.login_id WHERE login.username = '$username' AND login.password = '$password'";
@@ -59,12 +73,11 @@ class User extends Database{
     }
   }
 
-  public function Reservation($showtime,$fee,$payment,$movieID,$sessionID){
-    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying, movie_id, user_id) VALUES ('$showtime','$fee','$payment','$movieID','$sessionID')";
+  public function Reservation($showtime,$fee,$payment,$movieID,$sessionID,$infoID){
+    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying, movie_id, user_id, info_id) VALUES ('$showtime','$fee','$payment','$movieID','$sessionID','$infoID')";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){
-      // $_SESSION['movie_id']= $movieID;
       header('location:reserveticket.php');
     }else{
       echo "error reservation";
@@ -84,16 +97,25 @@ class User extends Database{
   // }
 
   public function Displayreservation($userID){
-    // $sql = "SELECT * FROM users INNER JOIN reserve_movie ON users.user_id = reserve_movie.user_id WHERE reserve_movie.user_id = '$userID'";
-    $sql = "SELECT * FROM reserve_movie WHERE user_id = '$userID'";
+    $sql = "SELECT * FROM users INNER JOIN reserve_movie ON users.user_id = reserve_movie.user_id INNER JOIN movie_info ON reserve_movie.info_id = movie_info.info_id WHERE reserve_movie.user_id = '$userID'";
     $result = $this->conn->query($sql);
 
-    if($result->num_rows>0){
+    if($result->num_rows == 1){
       $row = array();
-      while($rows = $result->fetch_assoc()){
-        $row[] = $rows;
-      }
-      return $row;
+      $_SESSION['user_id'] = $row['user_id'];
+      
+      return $result->fetch_assoc();
+    }else{
+      return FALSE;
+    }
+  }
+
+  public function getOneticket($session_name){
+    $sql = "SELECT * FROM reserve_movie WHERE movie_id = '$session_name'";
+    $result = $this->conn->query($sql);
+
+    if($result->num_rows == 1){
+      return $result->fetch_assoc();
     }else{
       return FALSE;
     }

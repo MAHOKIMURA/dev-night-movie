@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <a href="userform.php" class="">Register</a>
   <div class="container">
     <div class="card mt-5">
       <div class="card-header bg-info">

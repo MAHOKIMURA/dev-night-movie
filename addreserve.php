@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <div class="background" style="background-image: url(./uploads/film.png); background-size: 25%; background-position: center; background-color:rgba(255, 255, 255, 0.7); background-blend-mode:lighten;">
+  <div class="background" style="background-image: url(./uploads/film.png); background-size: 20%; background-position: center; background-color:rgba(255, 255, 255, 0.7); background-blend-mode:lighten;">
     <div class="jumbotron jumbotron-fluid bg-secondary">
       <div class="container-fluid mt-3">
         <nav class="navbar navbar-dark navbar-expand-lg navbar-togglerable-md">
@@ -50,42 +50,42 @@
     <div class="container mx-auto">
       <form action="nightmovieAction.php" method="post">
         <div class="container bg-light">
-          <input type="hidden" name="movieID" value="<?php echo $_GET['movieID'] ?>">
+          <input type="hidden" name="movieID" value="<?php echo $_GET['movie_id'] ?>">
           <div class="container">
             <h4 style="text-decoration: underline;">Schedule</h4>
             <ul class="list-inline">
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px; height: 60px;">
                   <label class="btn btn-outline-danger mb-1">
-                    <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="9:30am-11:40am">9:30am-11:40am
+                    <input type="radio" name="show_time" id="" autocomplete="off" checked value="9:30am-11:40am">9:30am-11:40am
                   </label>
                 </div>
               </li>
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px; height: 60px;">
                   <label class="btn btn-outline-danger mb-1">
-                    <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="12:10pm-2:20pm">12:10pm-2:20pm
+                    <input type="radio" name="show_time" id="" autocomplete="off" value="12:10pm-2:20pm">12:10pm-2:20pm
                   </label>
                 </div>
               </li>
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px; height: 60px;">
                   <label class="btn btn-outline-danger mb-1">
-                    <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="2:50pm-5:00pm">2:50pm-5:00pm
+                    <input type="radio" name="show_time" id="" autocomplete="off" value="2:50pm-5:00pm">2:50pm-5:00pm
                   </label>
                 </div>
               </li>
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px; height: 60px;">
                   <label class="btn btn-outline-danger mb-1">
-                    <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="5:30pm-7:40pm">5:30pm-7:40pm
+                    <input type="radio" name="show_time" id="" autocomplete="off" value="5:30pm-7:40pm">5:30pm-7:40pm
                   </label>
                 </div>
               </li>
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px; height: 60px;">
                   <label class="btn btn-outline-danger mb-1">
-                    <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="8:10pm-10:20pm">8:10pm-10:20pm
+                    <input type="radio" name="show_time" id="" autocomplete="off" value="8:10pm-10:20pm">8:10pm-10:20pm
                   </label>
                 </div>
               </li>
@@ -105,28 +105,28 @@
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px; height: 60px;">
                   <label class="btn btn-outline-secondary mb-1">
-                    <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="UniStudents $15"> UniStudents $15
+                    <input type="radio" name="tFee" id="" autocomplete="off" value="UniStudents $15"> UniStudents $15
                   </label>
                 </div>
               </li>
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px; height: 60px;">
                   <label class="btn btn-outline-secondary mb-1">
-                    <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="Children/Students $10"> Children/Students $10
+                    <input type="radio" name="tFee" id="" autocomplete="off" value="Children/Students $10"> Children/Students $10
                   </label>
                 </div>
               </li>
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px; height: 60px;">
                   <label class="btn btn-outline-secondary mb-1">
-                    <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="Elderys $12"> Elderys $12
+                    <input type="radio" name="tFee" id="" autocomplete="off" value="Elderys $12"> Elderys $12
                   </label>
                 </div>
               </li>
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px; height: 60px;">
                   <label class="btn btn-outline-secondary mb-1">
-                    <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="Lateshow $14"> Lateshow $14
+                    <input type="radio" name="tFee" id="" autocomplete="off" value="Lateshow $14"> Lateshow $14
                   </label>
                 </div>
               </li>
@@ -140,14 +140,14 @@
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 70px; height: 60px;">
                   <label class="btn btn-outline-danger mb-1">
-                    <input type="radio" name="payments" id="" autocomplete="off" checked="" value="cash"> cash
+                    <input type="radio" name="payments" id="" autocomplete="off" value="cash"> cash
                   </label>
                 </div>
               </li>
               <li class="list-inline-item">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 70px; height: 60px;">
                   <label class="btn btn-outline-danger mb-1">
-                    <input type="radio" name="payments" id="" autocomplete="off" checked="" value="card"> card
+                    <input type="radio" name="payments" id="" autocomplete="off" value="card"> card
                   </label>
                 </div>
               </li>

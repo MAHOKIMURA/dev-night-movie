@@ -1,7 +1,7 @@
 <?php
 
 include 'nightmovieAction.php';
-// $userID = $_SESSION['user_id'];
+$userID = $_SESSION['user_id'];
 
 ?>
 
@@ -51,17 +51,17 @@ include 'nightmovieAction.php';
       <h3 class="display-4 font-weight-bold text-center">You are going to see</h3>
     </div>
     <?php
-    if ($User->Displayreservation($_SESSION['user_id']) == FALSE) {
+    if ($User->getOneticket($userID) == FALSE) {
       echo "<li class='list-group-item text-light bg-dark'>NO MOVIES</li>";
     } else {
-      foreach ($User->Displayreservation($_SESSION['user_id']) as $row) {
+      foreach ($User->getOneticket($userID) as $row) {
         $movieID = $row['movie_id'];
+        $infoID = $_SESSION['info_id'];
     ?>
         <div class="container w-50 mt-3">
-
           <ul class="list-group list-unstyled">
-            <li class="list-group-item bg-dark text-white">No. <?php echo $movieID; ?></li>
-            <li class="list-group-item bg-light">Movie: <?php echo $row['moviename'] ?></li> 
+            <li class="list-group-item bg-dark text-white">No. <?php echo $movieID; ?> - <?php echo $infoID ?></li>
+            <li class="list-group-item bg-light">Movie: <?php echo $row['add_info'] ?></li> 
             <li class="list-group-item bg-light">Time: <?php echo $row['movietime']; ?></li>
             <li class="list-group-item bg-light">Ticket Fee: <?php echo $row['ticket']; ?></li>
             <li class="list-group-item bg-light">How to pay: <?php echo $row['paying']; ?></li>
