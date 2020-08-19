@@ -8,7 +8,7 @@ if(isset($_POST['decidemovie'])){
   $showtime = $_POST['show_time'];
   $fee = $_POST['tFee'];
   $payment = $_POST['payments'];
-  $movieID =$_POST['movie_id'];
+  $movieID =$_POST['reserveID'];
   $userID = $_SESSION['user_id'];
   $infoID = $_SESSION['info_id'];
   
@@ -20,7 +20,7 @@ if(isset($_POST['decidemovie'])){
   $showtime = $_POST['show_time'];
   $fee = $_POST['tFee'];
   $payment = $_POST['payments'];
-  $movieID = $_POST['movieID'];
+  $movieID = $_POST['reserveID'];
 
   $User->changeMovie($movies,$showtime,$fee,$payment,$movieID);
   

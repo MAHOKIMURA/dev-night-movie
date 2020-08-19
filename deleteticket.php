@@ -2,8 +2,8 @@
 
 include 'nightmovieAction.php';
 
-$movieID = $_GET['movieID'];
+$reserveID = $_GET['reserveID'];
 
-$User->deleteMovie($movieID);
+$User->deleteMovie($reserveID);
 
 ?>

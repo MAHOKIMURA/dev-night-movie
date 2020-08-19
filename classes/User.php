@@ -74,7 +74,7 @@ class User extends Database{
   }
 
   public function Reservation($showtime,$fee,$payment,$movieID,$sessionID,$infoID){
-    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying, movie_id, user_id, info_id) VALUES ('$showtime','$fee','$payment','$movieID','$sessionID','$infoID')";
+    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying, resrve_id, user_id, info_id) VALUES ('$showtime','$fee','$payment','$movieID','$sessionID','$infoID')";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){
@@ -111,7 +111,7 @@ class User extends Database{
   }
 
   public function getOneticket($session_name){
-    $sql = "SELECT * FROM reserve_movie WHERE movie_id = '$session_name'";
+    $sql = "SELECT * FROM reserve_movie WHERE reserve_id = '$session_name'";
     $result = $this->conn->query($sql);
 
     if($result->num_rows == 1){
@@ -122,7 +122,7 @@ class User extends Database{
   }
 
   public function deleteMovie($movieID){
-    $sql = "DELETE FROM reserve_movie WHERE movie_id = '$movieID'";
+    $sql = "DELETE FROM reserve_movie WHERE reserve_id = '$movieID'";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){
@@ -133,7 +133,7 @@ class User extends Database{
   }
 
   public function changeMovie($moviename,$movietime,$ticketfee,$payment,$movieID){
-    $sql = "UPDATE reserve_movie SET moviename='$moviename',movietime='$movietime',ticket='$ticketfee',paying='$payment' WHERE movie_id='$movieID'";
+    $sql = "UPDATE reserve_movie SET moviename='$moviename',movietime='$movietime',ticket='$ticketfee',paying='$payment' WHERE reserve_id='$movieID'";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){

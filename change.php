@@ -53,7 +53,7 @@
     </div>
     <div class="container mx-auto">
       <form action="nightmovieAction.php" method="post">
-        <input type="text" name="movieID" id="" value="<?php echo $_GET['movieID'] ?>" placeholder="" class="form-control">
+        <input type="text" name="reserveID" id="" value="<?php echo $_GET['reserveID'] ?>" placeholder="" class="form-control">
         <div class="container">
           <h4 class="text-danger" style="text-decoration: underline;">Select Movie</h4>
           <ul class="list-inline">

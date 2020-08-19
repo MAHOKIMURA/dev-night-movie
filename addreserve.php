@@ -50,7 +50,7 @@
     <div class="container mx-auto">
       <form action="nightmovieAction.php" method="post">
         <div class="container bg-light">
-          <input type="hidden" name="movieID" value="<?php echo $_GET['movie_id'] ?>">
+          <input type="hidden" name="reserveID" value="<?php echo $_GET['reserve_id'] ?>">
           <div class="container">
             <h4 style="text-decoration: underline;">Schedule</h4>
             <ul class="list-inline">

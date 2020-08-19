@@ -56,7 +56,7 @@ include 'nightmovieAction.php';
           
            ?>
             <li class="list-inline-item">
-              <a href="addreserve.php?movie_id=<?php echo $row['info_id']; ?>" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 250px;  height: 150px;"><?php echo $row['add_title'];?>
+              <a href="addreserve.php?reserve_id=<?php echo $row['info_id']; ?>" class="text-light btn btn-secondary mb-1 active" role="button" aria-pressed="true" style="width: 250px;  height: 150px;"><?php echo $row['add_title'];?>
                 <!-- image -->
               </a>
             </li>
