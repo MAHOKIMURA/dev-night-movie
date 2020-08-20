@@ -51,54 +51,16 @@
       <h2 class="display-3 font-weight-bold text-md-center">Change Tickets</h2>
       <hr>
     </div>
-    <div class="container mx-auto">
+    <div class="container mx-auto bg-light">
       <form action="nightmovieAction.php" method="post">
-        <input type="text" name="reserveID" id="" value="<?php echo $_GET['reserveID'] ?>" placeholder="" class="form-control">
-        <div class="container">
-          <h4 class="text-danger" style="text-decoration: underline;">Select Movie</h4>
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;
-    height: 150px;">
-                <label class="btn btn-secondary mb-1">
-                  <input type="radio" name="movie" id="" autocomplete="off" checked="" value="Avengers"> Avengers
-                </label>
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <div class="btn-group btn-group-toggle " data-toggle="buttons" style="width: 200px;
-    height: 150px;">
-                <label class="btn btn-secondary mb-1 ">
-                  <input type="radio" name="movie" id="" autocomplete="off" checked="" value="Aladdin" class=""> Aladdin
-                </label>
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;
-    height: 150px;">
-                <label class="btn btn-secondary mb-1">
-                  <input type="radio" name="movie" id="" autocomplete="off" checked="" value="Harry Potter"> Harry Potter and the Philosopher's Stone
-                </label>
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 200px;
-    height: 150px;">
-                <label class="btn btn-secondary mb-1">
-                  <input type="radio" name="movie" id="" autocomplete="off" checked="" value="Kingsman"> Kingsman: The Secret Service
-                </label>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <br>
+        <input type="text" name="reserveID" id="" value="<?php echo $_GET['reserve_id'] ?>" placeholder="" class="form-control">
         <div class="container">
           <h4 style="text-decoration: underline;">Schedule</h4>
           <ul class="list-inline">
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px;
     height: 60px;">
-                <label class="btn btn-warning mb-1">
+                <label class="btn btn-outline-warning mb-1">
                   <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="9:30am-11:40am">9:30am-11:40am
                 </label>
               </div>
@@ -106,7 +68,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px;
     height: 60px;">
-                <label class="btn btn-warning mb-1">
+                <label class="btn btn-outline-warning mb-1">
                   <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="12:10pm-2:20pm">12:10pm-2:20pm
                 </label>
               </div>
@@ -114,7 +76,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px;
     height: 60px;">
-                <label class="btn btn-warning mb-1">
+                <label class="btn btn-outline-warning mb-1">
                   <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="2:50pm-5:00pm">2:50pm-5:00pm
                 </label>
               </div>
@@ -122,7 +84,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px;
     height: 60px;">
-                <label class="btn btn-warning mb-1">
+                <label class="btn btn-outline-warning mb-1">
                   <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="5:30pm-7:40pm">5:30pm-7:40pm
                 </label>
               </div>
@@ -130,7 +92,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 170px;
     height: 60px;">
-                <label class="btn btn-warning mb-1">
+                <label class="btn btn-outline-warning mb-1">
                   <input type="radio" name="show_time" id="" autocomplete="off" checked="" value="8:10pm-10:20pm">8:10pm-10:20pm
                 </label>
               </div>
@@ -144,7 +106,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;
     height: 60px;">
-                <label class="btn btn-secondary mb-1">
+                <label class="btn btn-outline-secondary mb-1">
                   <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="Adas $18"> Adalts $18
                 </label>
               </div>
@@ -152,7 +114,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;
     height: 60px;">
-                <label class="btn btn-secondary mb-1">
+                <label class="btn btn-outline-secondary mb-1">
                   <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="UniStudents $15"> UniStudents $15
                 </label>
               </div>
@@ -160,7 +122,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;
     height: 60px;">
-                <label class="btn btn-secondary mb-1">
+                <label class="btn btn-outline-secondary mb-1">
                   <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="Children/Students $10"> Children/Students $10
                 </label>
               </div>
@@ -168,7 +130,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;
     height: 60px;">
-                <label class="btn btn-secondary mb-1">
+                <label class="btn btn-outline-secondary mb-1">
                   <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="Elderys $12"> Elderys $12
                 </label>
               </div>
@@ -176,7 +138,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 150px;
     height: 60px;">
-                <label class="btn btn-secondary mb-1">
+                <label class="btn btn-outline-secondary mb-1">
                   <input type="radio" name="tFee" id="" autocomplete="off" checked="" value="Lateshow $14"> Lateshow $14
                 </label>
               </div>
@@ -190,7 +152,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 70px;
     height: 60px;">
-                <label class="btn btn-warning mb-1">
+                <label class="btn btn-outline-warning mb-1">
                   <input type="radio" name="payments" id="" autocomplete="off" checked="" value="cash"> cash
                 </label>
               </div>
@@ -198,7 +160,7 @@
             <li class="list-inline-item">
               <div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 70px;
     height: 60px;">
-                <label class="btn btn-warning mb-1">
+                <label class="btn btn-outline-warning mb-1">
                   <input type="radio" name="payments" id="" autocomplete="off" checked="" value="card"> card
                 </label>
               </div>
@@ -209,7 +171,7 @@
 
         <br>
         <br>
-        <button type="submit" name="changereserve" class="btn btn-outline-warning btn-block">Apply Changing</button>
+        <button type="submit" name="changereserve" class="btn btn-danger btn-block">Apply Changing</button>
         <br>
       </form>
     </div>

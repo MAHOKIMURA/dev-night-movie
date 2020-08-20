@@ -8,21 +8,19 @@ if(isset($_POST['decidemovie'])){
   $showtime = $_POST['show_time'];
   $fee = $_POST['tFee'];
   $payment = $_POST['payments'];
-  $movieID =$_POST['reserveID'];
+  $reserveID =$_POST['reserveID'];
   $userID = $_SESSION['user_id'];
-  $infoID = $_SESSION['info_id'];
   
 
-  $User->Reservation($showtime,$fee,$payment,$movieID,$userID,$infoID);
+  $User->Reservation($showtime,$fee,$payment,$reserveID,$userID);
 
 }elseif(isset($_POST['changereserve'])){
-  $movies = $_POST['movie'];
   $showtime = $_POST['show_time'];
   $fee = $_POST['tFee'];
   $payment = $_POST['payments'];
-  $movieID = $_POST['reserveID'];
+  $reserveID = $_POST['reserveID'];
 
-  $User->changeMovie($movies,$showtime,$fee,$payment,$movieID);
+  $User->changeMovie($showtime,$fee,$payment,$reserveD);
   
 }elseif(isset($_POST['register'])){
   $fname=$_POST['fname'];

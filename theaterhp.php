@@ -85,7 +85,7 @@ include 'nightmovieAction.php';
         <div class="carousel-inner" role="listbox" style="background-color: rgba(0,0,0,0.5);">
           <div class="carousel-item active">
             <div class="container  d-flex justify-content-center ">
-              <img class="" src="./uploads/onward.webp" data-src="holder.js/900x400?theme=social" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
+              <img class="d-sm-none d-md-block" src="./uploads/onward.webp" data-src="holder.js/900x400?theme=social" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
               <img class="" src="./uploads/ww84.jpeg" data-src="holder.js/900x400?theme=social" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
             </div>
           </div>
@@ -93,6 +93,13 @@ include 'nightmovieAction.php';
             <div class="container  d-flex justify-content-center ">
               <img class="d-sm-none d-md-block" src="./uploads/no_more.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
               <img class="" src="./uploads/no_more2.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 600px; height: 400px;">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container  d-flex justify-content-center ">
+              <img class="d-sm-none d-md-block" src="./uploads/totoro.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
+              <span class="mx-auto text-light"><h3 class="text-center display-4 font-weight-bold">Go to see ジブリ!!</h3></span>
+              <img class="" src="./uploads/kiki.jpg" data-src="holder.js/900x400?theme=industrial" alt="900x400" data-holder-rendered="true" style="width: 300px; height: 400px;">
             </div>
           </div>
         </div>

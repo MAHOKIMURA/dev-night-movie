@@ -25,12 +25,13 @@ class User extends Database{
         return "error in first query";
     }
   }
-  public function displayMovies($sessionID){
-    $sql = "SELECT * FROM movie_info WHERE info_id = '$sessionID'";
+  public function displayMovies($reserveID){
+    $sql = "SELECT * FROM movie_info INNER JOIN reserve_movie ON movie_info.info_id = reserve_movie.info_id WHERE reserve_movie.reserve_id = '$reserveID'";
     $result = $this->conn->query($sql);
 
     if($result->num_rows>0){
       $row = array();
+      $_SESSION['reserve_id'] = $row['reserve_id'];
       while($rows = $result->fetch_assoc()){
         $row[] = $rows;
       }
@@ -73,16 +74,18 @@ class User extends Database{
     }
   }
 
-  public function Reservation($showtime,$fee,$payment,$movieID,$sessionID,$infoID){
-    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying, resrve_id, user_id, info_id) VALUES ('$showtime','$fee','$payment','$movieID','$sessionID','$infoID')";
+  public function Reservation($showtime,$fee,$payment,$reserveID,$sessionID){
+    $sql = "INSERT INTO reserve_movie(movietime, ticket, paying, info_id, user_id) VALUES ('$showtime','$fee','$payment','$reserveID','$sessionID')";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){
-      header('location:reserveticket.php');
-    }else{
-      echo "error reservation";
+          header('location:reserveticket.php');
+       
+        }else{
+          echo "error reserving movie";
+        }
     }
-  }
+  
 
   // public function addMovies($movies,$showtime,$fee,$payment){
   //   $sql = "INSERT INTO reserve_movie(moviename, movietime, ticket, paying) VALUES ('$movies','$showtime','$fee','$payment')";
@@ -100,15 +103,33 @@ class User extends Database{
     $sql = "SELECT * FROM users INNER JOIN reserve_movie ON users.user_id = reserve_movie.user_id INNER JOIN movie_info ON reserve_movie.info_id = movie_info.info_id WHERE reserve_movie.user_id = '$userID'";
     $result = $this->conn->query($sql);
 
-    if($result->num_rows == 1){
+    if($result->num_rows>0){
       $row = array();
-      $_SESSION['user_id'] = $row['user_id'];
       
-      return $result->fetch_assoc();
+      while($rows = $result->fetch_assoc()){
+        $row[] = $rows;
+      }
+      return $row;
     }else{
       return FALSE;
     }
   }
+
+  // public function DisplayTicket($userID){
+  //   $sql ="SELECT * FROM reserve_movie WHERE user_id = '$userID'";
+  //   $result = $this->conn->query($sql);
+
+  //   if($result->num_rows>0){
+  //     $row = array();
+      
+  //     while($rows = $result->fetch_assoc()){
+  //       $row[] = $rows;
+  //     }
+  //     return $row;
+  //   }else{
+  //     return FALSE;
+  //   }
+  // }
 
   public function getOneticket($session_name){
     $sql = "SELECT * FROM reserve_movie WHERE reserve_id = '$session_name'";
@@ -132,8 +153,8 @@ class User extends Database{
     }
   }
 
-  public function changeMovie($moviename,$movietime,$ticketfee,$payment,$movieID){
-    $sql = "UPDATE reserve_movie SET moviename='$moviename',movietime='$movietime',ticket='$ticketfee',paying='$payment' WHERE reserve_id='$movieID'";
+  public function changeMovie($movietime,$ticketfee,$payment,$reserveID){
+    $sql = "UPDATE reserve_movie SET movietime='$movietime',ticket='$ticketfee',paying='$payment' WHERE reserve_id='$reserveID'";
     $result = $this->conn->query($sql);
 
     if($result == TRUE){

@@ -2,7 +2,7 @@
 
 include 'nightmovieAction.php';
 $userID = $_SESSION['user_id'];
-
+// $infoID = $_SESSION['info_id'];
 ?>
 
 <!doctype html>
@@ -26,7 +26,7 @@ $userID = $_SESSION['user_id'];
           <div class="container">
             <a href="#" class="navbar-brand">
               <!-- image here -->
-              <img src="image/exclamation_mark.jpg" height="30" width="30" alt="">
+              
             </a>
             <button class="navbar-toggler " data-toggle="collapse" data-target="#basicNav">
               <span class="navbar-toggler-icon"></span>
@@ -51,23 +51,23 @@ $userID = $_SESSION['user_id'];
       <h3 class="display-4 font-weight-bold text-center">You are going to see</h3>
     </div>
     <?php
-    if ($User->getOneticket($userID) == FALSE) {
+    if ($User->Displayreservation($_SESSION['user_id']) == FALSE) {
       echo "<li class='list-group-item text-light bg-dark'>NO MOVIES</li>";
     } else {
-      foreach ($User->getOneticket($userID) as $row) {
+      foreach ($User->Displayreservation($_SESSION['user_id']) as $row) {
         $reserveID = $row['reserve_id'];
-        $infoID = $_SESSION['info_id'];
+        $infoID = $row['info_id'];
     ?>
         <div class="container w-50 mt-3">
           <ul class="list-group list-unstyled">
             <li class="list-group-item bg-dark text-white">No. <?php echo $reserveID; ?> - <?php echo $infoID ?></li>
-            <li class="list-group-item bg-light">Movie: <?php echo $row['add_info'] ?></li> 
+            <li class="list-group-item bg-light">Movie: <?php echo $row['add_title'] ?></li> 
             <li class="list-group-item bg-light">Time: <?php echo $row['movietime']; ?></li>
             <li class="list-group-item bg-light">Ticket Fee: <?php echo $row['ticket']; ?></li>
             <li class="list-group-item bg-light">How to pay: <?php echo $row['paying']; ?></li>
             <li class="list-group-item bg-light text-center">
-              <a href="change.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-warning  mr-3">Change Your Movie</a>
-              <a href="deleteticket.php?movieID=<?php echo $movieID ?>" class="btn btn-outline-danger mr-3">Cancel Your Movie</a>
+              <!-- <a href="addchange.php?reserveID=<?php //echo $reserveID ?>" class="btn btn-warning  mr-3">Change Your Movie</a> -->
+              <a href="deleteticket.php?reserveID=<?php echo $reserveID ?>" class="btn btn-danger mr-3">Cancel Your Movie</a>
             </li>
           </ul>
         </div>
